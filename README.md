@@ -1,27 +1,52 @@
 # axiomatic-blacksmith
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+> Pithy project description
 
-## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+## Team
 
-## Problem ##
-  > Describe the problem your product solves.
+  - __Product Owner__: teamMember
+  - __Scrum Master__: teamMember
+  - __Development Team Members__: teamMember, teamMember
 
-## Solution ##
-  > Describe how your product elegantly solves the problem.
+## Table of Contents
 
-## Quote from You ##
-  > A quote from a spokesperson in your company.
+1. [Usage](#Usage)
+1. [Requirements](#requirements)
+1. [Development](#development)
+    1. [Installing Dependencies](#installing-dependencies)
+    1. [Tasks](#tasks)
+1. [Team](#team)
+1. [Contributing](#contributing)
 
-## How to Get Started ##
-  > Describe how easy it is to get started.
+## Usage
 
-## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+> Some usage instructions
 
-## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+## Requirements
+
+- Node 0.10.x
+- Redis 2.6.x
+- Postgresql 9.1.x
+- etc
+- etc
+
+## Development
+
+### Installing Dependencies
+
+From within the root directory:
+
+```sh
+sudo npm install -g bower
+npm install
+bower install
+```
+
+### Roadmap
+
+View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
