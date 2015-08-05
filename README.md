@@ -1,20 +1,27 @@
-# MEAN Stack Single Page Application Starter
+# axiomatic-blacksmith
+## Heading ##
+  > Name the product in a way the reader (i.e. your target customers) will understand.
 
-This is a repo for a starter appliation for a Single Page MEAN Stack application. Just download and install and you have a good foundation for building application. 
+## Sub-Heading ##
+  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
 
-## Installation
-1. Download the repository
-2. Install npm modules: `npm install`
-3. Install bower dependencies `bower install`
-4. Start up the server: `node server.js`
-5. View in browser at http://localhost:8080
+## Summary ##
+  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
-Use this starter kit to build any MEAN stack application you like.
+## Problem ##
+  > Describe the problem your product solves.
 
-If you have any questions or requests, email us at [chris@scotch.io](mailto:chris@scotch.io) and we'll keep updating this to make it perfect.
+## Solution ##
+  > Describe how your product elegantly solves the problem.
 
-## Future Additions
-- CRUD examples
-- Development and Production Environments
-- Link examples
-- Single Page AngularJS Animations
+## Quote from You ##
+  > A quote from a spokesperson in your company.
+
+## How to Get Started ##
+  > Describe how easy it is to get started.
+
+## Customer Quote ##
+  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+
+## Closing and Call to Action ##
+  > Wrap it up and give pointers where the reader should go next.
