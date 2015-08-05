@@ -1,4 +1,4 @@
-# Project Name
+# axiomatic-blacksmith
 
 > Pithy project description
 
