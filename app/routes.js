@@ -10,6 +10,12 @@ module.exports = function(app) {
     res.sendfile('./public/index.html');
   });
 
+  app.get('/questions', function(req, res) {
+    var questions = Question.find({}, function(err, data){
+      if(err) throw err;
+      res.send(data);
+    });
+  })
 
   // questions (NOT answers) are posted via '/questions' route
   app.post('/questions', function(req, res) {
@@ -26,24 +32,18 @@ module.exports = function(app) {
       if (err) throw err;
       console.log("Saved!");
     })
-  }
+  });
 
   //answers are posted to pre-existing question models
   app.post('/answer', function(req, res){
 
     // find the corresponding question by primary key
-    Question.findOne( { _id : req.body.questionid } ).exec(function(err, question){
+    Question.findOne( { _id : req.body.questionid }, function(err, question){
       if(err) throw err;
       question.answeredBy = req.body.teacher;
       question.answer = req.body.answer;
-      question.save()
-    })
-};
-
-{
-  title: "What is Angular?",
-  body: "etc.",
-  student: "Adnan",
-  answeredBy: undefined,
-  answer: undefined
+      question.save();
+      res.send(201,'Success');
+    });
+  });
 }
