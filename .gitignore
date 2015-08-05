@@ -1,3 +1,18 @@
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+results
+
+npm-debug.log
+node_modules
+
+public/libs
+
 ### node etc ###
 
 # Logs
