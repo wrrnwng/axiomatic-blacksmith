@@ -5,4 +5,4 @@ var videoSchema = mongoose.Schema({
     url: String
 });
 
-var Video = mongoose.model('Video', videoSchema);
+module.exports = mongoose.model('Video', videoSchema);
