@@ -7,8 +7,13 @@ angular.module('StudentClassroomCtrl', [])
       qandaFactory.getAnswers()
         .then(function(questions) {
           $scope.data.questions = questions;
+          $scope.data.answeredQuestions = questions.filter(function (question) {
+            return !!question.answer;
+          });
+          $scope.data.questionQueue = questions.filter(function (question) {
+            return !question.answer;
+          });
         });
-
     };
     $scope.getQandA();
     return $scope;
