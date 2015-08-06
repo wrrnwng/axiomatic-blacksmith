@@ -61,4 +61,13 @@ var question2 = new Question({
 
 question2.save();
 
+var question3 = new Question({
+  title: 'Why is Tony selling sharks?',
+  body: '...and how are they so cheap?',
+  student: daniel._id,
+  video: codeClass._id
+});
+
+question3.save();
+
 mongoose.connection.close();

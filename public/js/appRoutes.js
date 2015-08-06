@@ -19,9 +19,17 @@ angular.module('appRoutes', [])
     return {
       scope: {
         questions: '='
-
       },
       restrict: 'E',
       templateUrl: 'views/qanda.html'
     }
-  });
+  })
+  .directive('queue', function() {
+    return {
+      scope: {
+        questions: '='
+      },
+      restrict: 'E',
+      templateUrl: 'views/queue.html'
+    }
+  })
