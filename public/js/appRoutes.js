@@ -17,6 +17,10 @@ angular.module('appRoutes', [])
   }])
   .directive('qanda', function() {
     return {
+      scope: {
+        questions: '='
+
+      },
       restrict: 'E',
       templateUrl: 'views/qanda.html'
     }
