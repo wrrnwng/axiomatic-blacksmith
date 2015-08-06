@@ -1,13 +1,15 @@
-angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('appRoutes', []).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-	$routeProvider
-
-		// home page
-		.when('/', {
-			templateUrl: 'views/home.html',
-			controller: 'MainController'
-		});
-
-	// $locationProvider.html5Mode(true);
-
+  $stateProvider
+    // home page
+    .state('home', {
+      url: '/',
+      templateUrl: 'views/home.html',
+      controller: 'MainController'
+    })
+    .state('student-classroom', {
+      url: '/classroom/student',
+      templateUrl: 'views/student-classroom.html',
+      controller: 'StudentClassroomController'
+    });
 }]);
