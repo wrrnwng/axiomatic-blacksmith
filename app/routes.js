@@ -1,4 +1,5 @@
 module.exports = function(app) {
+  var Question = require('./models/Question');
 
   // server routes ===========================================================
   // handle things like api calls
@@ -31,13 +32,12 @@ module.exports = function(app) {
     // save the newly created model to Mongoose
     question.save(function(err, data){
       if (err) throw err;
-      console.log("Saved!");
+      res.send(201);
     })
   });
 
   //answers are posted to pre-existing question models
   app.post('/answer', function(req, res){
-
     // find the corresponding question by primary key
     Question.findOne( { _id : req.body.questionid }, function(err, question){
       if(err) throw err;
