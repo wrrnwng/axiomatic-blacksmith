@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Axiomatic
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Giving educators high quality, engaging lessons with one-on-one interaction
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > The lecture is a now long-antiquated format for delivering new material, and while many have turned to MOOCs and online video to teach, we've also lost the key interactions between educator and student that drives real learning.  Axiomatic provides the best of both worlds: highly engaging video lecture content with interaction between student and educator -- no matter how far apart they are!
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Lectures are slow and hard for remote learners, but they allow for (limited) interaction with the lecturer.  MOOCs give you lots of freedom and self-pacing, but you lose the interactivity and it's hard to get answers to mis-understanding.  
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > Axiomatic lets learners anywhere jump in and ask questions that stay with the video, giving future 
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > This tool was built by a group of hackers passionate about learning; we know what we've wanted to see from the lecture format, and that's what we're building with Axiomatic (EDIT THIS).
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Getting started is simple: log in, click the video, and follow along.  Have a question? Type it in and submit, and the video will pause if you open a session with the instructor.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "This is perfect.  I can skip the parts I do get, but I can still ask Marcus about all the hard Angular stuff I struggle with! "
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Want to know more? Go to axiomatic.io to get started!
