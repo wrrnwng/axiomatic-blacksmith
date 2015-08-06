@@ -1,3 +1,5 @@
-module.exports = {
-	url : 'mongodb://127.0.0.1:27017/axiomatic'
-}
+var mongoose = require('mongoose');
+
+var dbConnect = process.env.MONGOLAB_URI || 'mongodb://localhost/axiomatic';
+
+mongoose.connect(dbConnect);
