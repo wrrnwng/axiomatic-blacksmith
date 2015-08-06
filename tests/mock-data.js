@@ -41,13 +41,24 @@ var codeClass = new Video({
 codeClass.save();
 
 var question1 = new Question({
-    title: 'Why is the sky blue?',
-    body: 'Seriously, why is the sky blue?',
-    answer: 'Because...',
-    student: warren._id,
-    answeredBy: adnan._id,
-    video: codeClass._id
+  title: 'Why is the sky blue?',
+  body: 'Seriously, why is the sky blue?',
+  answer: 'Because...',
+  student: warren._id,
+  answeredBy: adnan._id,
+  video: codeClass._id
 });
 question1.save();
+
+var question2 = new Question({
+  title: 'Why is sun yellow?',
+  body: 'Whay is it changing colors from red to yellow?',
+  answer: 'Only god knows',
+  student: mila._id,
+  answeredBy: adnan._id,
+  video: codeClass._id
+});
+
+question2.save();
 
 mongoose.connection.close();

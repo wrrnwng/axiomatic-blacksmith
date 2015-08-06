@@ -1,6 +1,8 @@
-<div>Student Name: {{questions.student.name}}</div>
-<div>Question: {{questions.body}}</div>
-<div>Answer: {{questions.answer}}</div>
+<div ng-repeat="question in questions">
+  <div>Student Name: {{question.student.name}}</div>
+  <div>Question: {{question.body}}</div>
+  <div>Answer: {{question.answer}}</div>
+</div>
 
 
 
