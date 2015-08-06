@@ -9,5 +9,4 @@ var questionSchema = mongoose.Schema({
     video: {type: Schema.Types.ObjectId, ref: 'Video'}
 });
 
-var Question = mongoose.model('Question', questionSchema);
-module.exports = Question;
+module.exports = mongoose.model('Question', questionSchema);
