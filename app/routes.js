@@ -1,16 +1,9 @@
 module.exports = function(app) {
+  // import mongoose model for Questions
   var Question = require('./models/Question');
 
-  // server routes ===========================================================
-  // handle things like api calls
-  // authentication routes
 
-  // frontend routes =========================================================
-  // route to handle all angular requests
-
-  app.get('/', function(req, res) {
-    res.sendfile('./public/index.html');
-  });
+  // Express routing service for get and post requests
 
   app.get('/questions', function(req, res) {
     var questions = Question.find({}, function(err, data){
@@ -36,15 +29,18 @@ module.exports = function(app) {
     })
   });
 
-  //answers are posted to pre-existing question models
+  // answers are posted to pre-existing question models;
+  // Lookup is done by ObjectId (use just the alphanumeric string
+  // ie: '5555ad2...',   NOT   ObjectID('5555ad2....') )
   app.post('/answer', function(req, res){
     // find the corresponding question by primary key
     Question.findOne( { _id : req.body.questionid }, function(err, question){
       if(err) throw err;
-      question.answeredBy = req.body.teacher;
+      question.answeredBy = req.body.answeredBy;
       question.answer = req.body.answer;
       question.save();
-      res.send(201,'Success');
+      // TODO: come back and redirect
+      res.send(201,'Success!\n');
     });
   });
 }
