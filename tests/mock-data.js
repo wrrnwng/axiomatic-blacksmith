@@ -40,8 +40,6 @@ var codeClass = new Video({
 });
 codeClass.save();
 
-console.log(warren);
-
 var question1 = new Question({
     title: 'Why is the sky blue?',
     body: 'Seriously, why is the sky blue?',
