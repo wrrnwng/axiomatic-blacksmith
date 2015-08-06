@@ -1,4 +1,5 @@
 module.exports = function(app) {
+  var Question = require('./models/Question');
 
   // server routes ===========================================================
   // handle things like api calls
@@ -32,6 +33,7 @@ module.exports = function(app) {
     question.save(function(err, data){
       if (err) throw err;
       console.log("Saved!");
+      res.send(201);
     })
   });
 
