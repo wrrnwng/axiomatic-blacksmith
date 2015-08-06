@@ -19,7 +19,7 @@ module.exports = function(app) {
 
   // questions (NOT answers) are posted via '/questions' route
   app.post('/questions', function(req, res) {
-    var question = new QuestionModel({
+    var question = new Question({
       title: req.body.title,
       body: req.body.body,
       student: req.body.student,
