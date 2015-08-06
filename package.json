@@ -6,6 +6,9 @@
 	"mongoose" : "~3.8.0",
 	"body-parser" : "~1.4.2",
 	"method-override" : "~2.0.2"
+  },
+  "scripts" : {
+    "testdata" : "node tests/mock-data.js"
   }
 }
 
