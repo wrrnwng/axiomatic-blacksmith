@@ -54,7 +54,7 @@ var question2 = new Question({
   title: 'Why is sun yellow?',
   body: 'Whay is it changing colors from red to yellow?',
   answer: 'Only god knows',
-  student: mila._id,
+  student: daniel._id,
   answeredBy: adnan._id,
   video: codeClass._id
 });
