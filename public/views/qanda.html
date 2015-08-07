@@ -1,12 +1,51 @@
-<h3>Answered Questions:</h3>
 
-<div ng-repeat="question in questions">
-  <div>{{question.student.name}}</div>
-  <div>Question: {{question.title}}</div>
-  <div>Answer: {{question.answer}}</div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    RECENTlY ASKED QUESTIONS
+  </div>
+  <div class="panel-body">
+    <ul class="media-list">
+    <div ng-repeat="question in questions">
+      <li class="media"> 
+          <div class="media-body">
+              <div class="media">
+                <a class="pull-left" href="#">
+                   <img class="media-object img-circle " src="img/user.png" style = "width:30px" />
+                </a>
+                  <div class="media-body">
+                        {{question.body}}
+                      <br />
+                      <small class="text-muted">{{question.student.name}} | 23rd June at 5:00pm</small>
+                     
+                  </div>
+              </div>
+          </div>
+      </li>
+      <li class="media">
+        <div class="media-body">
+            <div class="media">
+                <a class="pull-left" href="#">
+                  <img class="media-object img-circle " src="img/user.gif" style = "width:30px"/>
+                </a>
+                <div class="media-body">
+                     {{question.answer}}
+                    <br />
+                   <small class="text-muted">{{question.anseredBy}} | 23rd June at 5:00pm</small>
+               
+                </div>
+            </div>
+        </div>     
+      </li>
+    </div>
+  </ul>
 </div>
-
-
-
-
-
+<div class="panel-footer">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Ask your question" />
+      <span class="input-group-btn">
+          <button class="btn btn-info" type="button">SEND</button>
+      </span>
+      </div>
+    </div>
+  </div>
+</div>
