@@ -4,9 +4,9 @@
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: Daniel Friedenbach (dfriedenbach)
+  - __Scrum Master__: Mila Antonova (idillia)
+  - __Development Team Members__: Adnan Pirza (adpirz), Warren Wong (wrrnwng)
 
 ## Table of Contents
 
