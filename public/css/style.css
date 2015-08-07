@@ -14,3 +14,22 @@ body {
   padding-right: 5px;
   padding-left: 10px;
 }
+
+.pause{
+      margin: auto auto;
+      font-size:20px;
+      text-align: center;
+      background-color:black;
+      color:white;
+      position: absolute;
+      top: 160px;
+      padding-top: 20px;
+      left: 180px;
+      height: 40px;
+      width: 120px;
+    }
+
+#video{
+  width:640px;
+  height:360px;
+}

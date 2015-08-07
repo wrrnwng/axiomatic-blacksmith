@@ -33,3 +33,16 @@ angular.module('appRoutes', [])
       templateUrl: 'views/queue.html'
     }
   })
+  // 
+  .directive('classvid', function(){
+    return {
+      template: 
+      '<div id="vidbox"> \
+        <div class="pause" ng-show="show1">PAUSE</div> \
+        <div id="video"></div> \
+        <input type="text" ng-model="input" ng-change="pause()"> \
+        <button type="button" ng-click="play()">Submit</button> \
+      </div>',
+      restrict: 'E'
+    }
+  });
