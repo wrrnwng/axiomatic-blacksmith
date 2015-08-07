@@ -2,13 +2,15 @@ module.exports = function(app) {
   // import mongoose model for Questions
   var Question = require('./models/Question');
   var User = require('./models/User');
+  var url = require('url');
 
 
   // Express routing service for get and post requests
 
   app.get('/users', function (req, res) {
-    if (req.body.name) {
-      var users = User.findOne({name: name})
+    var query = url.parse(req.url).query;
+    if (query.name) {
+      var users = User.findOne({name: query.name})
         .exec(function (err, data) {
           if (err) throw err;
           res.send(data);
