@@ -1,6 +1,6 @@
 # axiomatic-blacksmith
 
-> Pithy project description
+> Giving educators high quality, engaging lessons with one-on-one interaction
 
 ## Team
 
