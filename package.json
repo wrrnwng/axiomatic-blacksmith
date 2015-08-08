@@ -9,6 +9,7 @@
     "url": "^0.10.3"
   },
   "scripts": {
+    "postinstall": "npm run testdata && bower install",
     "testdata": "node tests/mock-data.js"
   }
 }

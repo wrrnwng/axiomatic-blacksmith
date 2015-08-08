@@ -3,8 +3,9 @@ var Question = require('../app/models/Question');
 var User = require('../app/models/User');
 var Video = require('../app/models/Video');
 
+var dbConnect = process.env.MONGOLAB_URI || 'mongodb://localhost/axiomatic';
 
-mongoose.connect('mongodb://localhost/axiomatic');
+mongoose.connect(dbConnect);
 
 User.find().remove().exec();
 Video.find().remove().exec();
