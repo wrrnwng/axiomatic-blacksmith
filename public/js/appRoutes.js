@@ -47,13 +47,16 @@ angular.module('appRoutes', [])
     }
   })
   // 
-  .directive('classvid', function(){
+  .directive('classvid', function() {
     return {
-      template: 
-      '<div id="vidbox"> \
-        <div class="pause" ng-show="show1">PAUSE</div> \
-        <div id="video"></div> \
-      </div>',
-      restrict: 'E'
+      restrict: 'E',
+      templateUrl: 'views/classvid.html'
     }
-  });
+  })
+
+.directive('timeline', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/timeline.html'
+  }
+})

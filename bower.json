@@ -5,6 +5,8 @@
     "bootstrap": "latest",
     "angular": "latest",
     "angular-ui-router": "~0.2.15",
-    "popcorn-js": "~1.5.11"
+    "popcorn-js": "~1.5.11",
+    "jquery": "~2.1.4",
+    "d3": "~3.5.6"
   }
 }
