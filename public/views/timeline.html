@@ -1,1 +1,74 @@
-<div id="timeline">Timmyline</div>
+<div id="timeline">
+  <style type="text/css">
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: black;
+      shape-rendering: crispEdges;
+    }
+
+    .axis text {
+      font-family: sans-serif;
+      font-size: 10px;
+    }
+
+    .timeline-label {
+      font-family: sans-serif;
+      font-size: 12px;
+    }
+
+    #timeline2 .axis {
+      transform: translate(0px,40px);
+      -ms-transform: translate(0px,40px); /* IE 9 */
+      -webkit-transform: translate(0px,40px); /* Safari and Chrome */
+      -o-transform: translate(0px,40px); /* Opera */
+      -moz-transform: translate(0px,40px); /* Firefox */
+    }
+    
+    .coloredDiv {
+      height:20px; width:20px; float:left;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function() {
+
+
+      var rectAndCircleTestData = [
+        {times: [
+          {"starting_time": 00,"ending_time": 154000}
+          ]}
+      ];
+
+
+
+      //var width = $('svg').parent().width();
+      
+
+      function timelineRectAndCircle() {
+        var chart = d3.timeline()
+        .tickFormat( //
+            {format: d3.time.format("%S"),
+            tickTime: d3.time.seconds,
+            tickInterval: 30,
+            tickSize: 10})
+
+        var svg = d3.select("#timeline2_combine").append("svg").attr("width", '680')
+          .datum(rectAndCircleTestData).call(chart);
+      }
+
+      
+
+      
+      timelineRectAndCircle();
+   
+    }
+  </script>
+
+
+
+    <h3>Combine circles and rectangles</h3>
+    <div id="timeline2_combine"></div>
+
+</div>  
+
+    
