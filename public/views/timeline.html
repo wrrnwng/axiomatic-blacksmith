@@ -33,25 +33,27 @@
     window.onload = function() {
 
        var iconTestData = [
-        {class:"jackie", icon: "jackie.png", times: [
-          {"starting_time": 0, "ending_time": 130000}, 
-          {"starting_time": 132000, "ending_time": 154000}]},
-        {class:"troll", icon: "troll.png", times: [
-          {"starting_time": 0, "ending_time": 154000,
-          "display":"circle"}, ]},
-        {class:"wat", icon: "wat.png", times: [
-          {"starting_time": 0, "ending_time": 154000}]},
+        {class:"jackie",  times: [
+          {"starting_time": 0, "ending_time": 10}, 
+          {"starting_time": 5500, "ending_time": 10500},
+          {"starting_time": 35500, "ending_time": 40500},
+          {"starting_time": 85500, "ending_time": 90500},
+          {"starting_time": 153990, "ending_time": 154000}
+          ]},
       ];
 
         function timelineStackedIcons() {
         var chart = d3.timeline()
-          .beginning(0) // we can optionally add beginning and ending times to speed up rendering a little
+          .beginning(10) // we can optionally add beginning and ending times to speed up rendering a little
           .ending(154000)
-          .showTimeAxisTick() // toggles tick marks
-          .stack() // toggles graph stacking
-          .margin({left:70, right:30, top:0, bottom:0})
+          .tickFormat( //
+            {format: d3.time.format("%M:%S"),
+            tickTime: d3.time.seconds,
+            tickInterval: 30,
+            tickSize: 10})
+          .margin({left:0, right:15, top:0, bottom:0})
           ;
-        var svg = d3.select("#timeline5").append("svg").attr("width", '680')
+        var svg = d3.select("#timeline5").append("svg").attr("width", '660')
           .datum(iconTestData).call(chart);
       }  
       // var rectAndCircleTestData = [
@@ -67,11 +69,11 @@
 
       // function timelineRectAndCircle() {
       //   var chart = d3.timeline()
-      //   .tickFormat( //
-      //       {format: d3.time.format("%M:%S"),
-      //       tickTime: d3.time.seconds,
-      //       tickInterval: 30,
-      //       tickSize: 10})
+        // .tickFormat( //
+        //     {format: d3.time.format("%M:%S"),
+        //     tickTime: d3.time.seconds,
+        //     tickInterval: 30,
+        //     tickSize: 10})
 
       //   var svg = d3.select("#timeline2_combine").append("svg").attr("width", '680')
       //     .datum(rectAndCircleTestData).call(chart);
@@ -88,7 +90,6 @@
     <!-- <div id="timeline2_combine"></div>
  -->
    <div>
-    <h3>We can also use icons</h3>
     <div id="timeline5"></div>
   </div>
 </div>  
