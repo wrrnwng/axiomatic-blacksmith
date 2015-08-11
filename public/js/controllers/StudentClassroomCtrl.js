@@ -1,6 +1,7 @@
 angular.module('StudentClassroomCtrl', [])
-  .controller('StudentClassroomController', function($scope, qandaFactory) {
+  .controller('StudentClassroomController', function($scope, qandaFactory, questionFormFactory) {
     $scope.data = {};
+    $scope.question = '';
 
     $scope.tagline = 'Welcome to the classroom!';
     $scope.getQandA = function() {
@@ -15,6 +16,15 @@ angular.module('StudentClassroomCtrl', [])
           });
         });
     };
+
+    $scope.askQuestion = function () {
+      questionFormFactory.submitQuestion({
+        title: $scope.question,
+        body: $scope.question
+      });
+      $scope.question = '';
+    };
+
     $scope.getQandA();
     return $scope;
 

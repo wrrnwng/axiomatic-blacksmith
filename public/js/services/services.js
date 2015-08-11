@@ -12,4 +12,30 @@ angular.module('axiomatic.services', [])
     return {
       getAnswers: getAnswers
     }
+  })
+  .factory('questionFormFactory', function ($http) {
+    var checkUser = function (username) {
+      return $http({
+        method: 'GET',
+        url: '/users?name=' + username
+      })
+      .then(function (resp) {
+        return resp.data;
+      });
+    }
+
+    var submitQuestion = function (question) {
+      return $http({
+          method: 'POST',
+          url: '/questions',
+          data: question
+        })
+        .then(function(resp) {
+          return resp.data;
+        });
+    }
+    return {
+      submitQuestion: submitQuestion,
+      checkUser: checkUser
+    }
   });
