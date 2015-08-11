@@ -1,62 +1,9 @@
-<div id="timeline">
-  <style type="text/css">
-    .axis path,
-    .axis line {
-      fill: none;
-      stroke: black;
-      shape-rendering: crispEdges;
-    }
+<div id="timeline" ng-controller="TimelineController">
 
-    .axis text {
-      font-family: sans-serif;
-      font-size: 10px;
-    }
-
-    .timeline-label {
-      font-family: sans-serif;
-      font-size: 12px;
-    }
-
-    #timeline2 .axis {
-      transform: translate(0px,40px);
-      -ms-transform: translate(0px,40px); /* IE 9 */
-      -webkit-transform: translate(0px,40px); /* Safari and Chrome */
-      -o-transform: translate(0px,40px); /* Opera */
-      -moz-transform: translate(0px,40px); /* Firefox */
-    }
-    
-    .coloredDiv {
-      height:20px; width:20px; float:left;
-    }
-  </style>
   <script type="text/javascript">
     window.onload = function() {
 
-       var iconTestData = [
-        {class:"jackie",  times: [
-          // {"starting_time": 0, "ending_time": 10}, 
-          {"starting_time": 5500, "ending_time": 10500},
-          {"starting_time": 35500, "ending_time": 40500},
-          {"starting_time": 85500, "ending_time": 90500},
-          // {"starting_time": 153990, "ending_time": 154000}
-          ]},
-      ];
-
-        function timelineStackedIcons() {
-        var chart = d3.timeline()
-          .beginning(0) // we can optionally add beginning and ending times to speed up rendering a little
-          .ending(154000)
-          .tickFormat( //
-            {format: d3.time.format("%M:%S"),
-            tickTime: d3.time.seconds,
-            tickInterval: 30,
-            tickSize: 10})
-          .margin({left:0, right:15, top:15, bottom:0})
-          ;
-        var svg = d3.select("#timeline5").append("svg").attr("width", '660')
-          .datum(iconTestData).call(chart);
-      }  
-       timelineStackedIcons();
+       
    
     }
   </script>
