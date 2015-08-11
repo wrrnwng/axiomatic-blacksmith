@@ -48,7 +48,7 @@ var question1 = new Question({
   student: warren._id,
   answeredBy: adnan._id,
   video: codeClass._id,
-  askQTime: 10
+  askQTime: 30
 });
 question1.save();
 
