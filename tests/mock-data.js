@@ -47,7 +47,8 @@ var question1 = new Question({
   answer: 'Because...',
   student: warren._id,
   answeredBy: adnan._id,
-  video: codeClass._id
+  video: codeClass._id,
+  askQTime: 10
 });
 question1.save();
 
@@ -57,7 +58,8 @@ var question2 = new Question({
   answer: 'Only god knows',
   student: daniel._id,
   answeredBy: adnan._id,
-  video: codeClass._id
+  video: codeClass._id,
+  askQTime: 5
 });
 
 question2.save();
@@ -66,7 +68,8 @@ var question3 = new Question({
   title: 'Why is Tony selling sharks?',
   body: '...and how are they so cheap?',
   student: daniel._id,
-  video: codeClass._id
+  video: codeClass._id,
+  askQTime: 50
 });
 
 question3.save();

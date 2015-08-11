@@ -7,7 +7,8 @@ var questionSchema = Schema({
     answer: String,
     student: {type: Schema.Types.ObjectId, ref: 'User'},
     answeredBy: {type: Schema.Types.ObjectId, ref: 'User'},
-    video: {type: Schema.Types.ObjectId, ref: 'Video'}
+    video: {type: Schema.Types.ObjectId, ref: 'Video'},
+    askQTime: Number
 });
 
 module.exports = mongoose.model('Question', questionSchema);
