@@ -51,7 +51,7 @@
             tickTime: d3.time.seconds,
             tickInterval: 30,
             tickSize: 10})
-          .margin({left:0, right:15, top:0, bottom:0})
+          .margin({left:0, right:15, top:15, bottom:0})
           ;
         var svg = d3.select("#timeline5").append("svg").attr("width", '660')
           .datum(iconTestData).call(chart);
