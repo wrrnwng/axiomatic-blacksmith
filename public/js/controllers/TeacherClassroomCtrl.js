@@ -26,3 +26,10 @@ angular.module('TeacherClassroomCtrl', [])
       $http.post('/answer',$scope.answer).then(function(){console.log('Success!')});
     }
   })
+
+  .directive('teacheranswer', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'views/teacher-answer.html'
+    }
+  })
