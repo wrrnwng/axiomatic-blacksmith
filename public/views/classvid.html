@@ -1,5 +1,7 @@
 <div id="vidbox"> 
   <div class="pause" ng-show="show1">PAUSE</div> 
   <div id="video"></div> 
+  <input type="text" ng-model="input" ng-keydown="pause()"> 
+  <button type="button" ng-click="play()">Submit</button> 
   <timeline></timeline> 
 </div>

@@ -41,17 +41,18 @@ angular.module('StudentClassroomCtrl', [])
 
 
     $scope.input = '';
+    var currentTime;
 
     $scope.pause = function() {
       $scope.show = true;
       popcorn.pause();
-      var currentTime = popcorn.currentTime();
-      console.log(currentTime);
+      currentTime = popcorn.currentTime();
 
     }
-    $scope.play = function() {
+    $scope.submitQ = function() {
       $scope.input = '';
       popcorn.play();
+      console.log(currentTime);
 
     }
 
