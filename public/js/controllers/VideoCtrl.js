@@ -4,7 +4,7 @@ angular.module('VideoCtrl', [])
       currentTime,
       isPlaying = true,
       playCallbacks = [],
-      pauseCallbacks = [];
+      pauseCallbacks = [],
       durationCallbacks = [];
 
     return {
@@ -84,10 +84,7 @@ angular.module('VideoCtrl', [])
   })
   .directive('classvid', function() {
     return {
-      template: '<div id="vidbox"> \
-        <div class="pause" ng-show="showPause">PAUSE</div> \
-        <div id="video"></div> \
-      </div>',
+      templateUrl: 'views/classvid.html',
       restrict: 'E'
     }
   })
