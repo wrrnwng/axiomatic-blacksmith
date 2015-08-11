@@ -1,29 +1,99 @@
 angular.module('VideoCtrl', [])
-  .controller('VideoController', function($scope) {
+  .factory('VideoFactory', function VideoFactory() {
+    var duration,
+      currentTime,
+      isPlaying = true,
+      playCallbacks = [],
+      pauseCallbacks = [];
+      durationCallbacks = [];
+
+    return {
+      play: function() {
+        isPlaying = true;
+        playCallbacks.forEach(function(callback) {
+          callback()
+        });
+      },
+      pause: function() {
+        isPlaying = false;
+        pauseCallbacks.forEach(function(callback) {
+          callback()
+        });
+      },
+      playListener: function(callback) {
+        playCallbacks.push(callback)
+      },
+
+      pauseListener: function(callback) {
+        pauseCallbacks.push(callback)
+      },
+      // The duration listener will be called when the duration info is 
+      // loaded; any events that require duration info should add this
+      // event listener. 
+      // The callback will be passed the duration.
+      durationListener: function(callback) {
+        durationCallbacks.push(callback)
+      },
+
+      durationReceived: function() {
+        durationCallbacks.forEach(function(callback) {
+          callback(duration)
+        });
+      },
+
+      isPlaying: isPlaying,
+
+      duration: duration
+    }
+  })
+  .controller('VideoController', function($scope, VideoFactory) {
     var wrapper = Popcorn.HTMLYouTubeVideoElement('#video');
     wrapper.src = 'https://www.youtube.com/watch?v=sh4O6DRs26M';
     var popcorn = Popcorn(wrapper);
-    popcorn.cue(1, function() {
-      console.log(this.duration());
+    $scope.showPause = false;
+    $scope.play = VideoFactory.play,
+      $scope.pause = VideoFactory.pause,
+      $scope.isPlaying = VideoFactory.isPlaying;
+
+    popcorn.on('durationchange', function() {
+      VideoFactory.duration = popcorn.duration();
+      VideoFactory.durationReceived();
+    })
+
+    VideoFactory.playListener(function() {
+      $scope.showPause = false;
+      popcorn.play();
     });
 
-    $scope.show = false;
-
-
-    $scope.input = '';
-    var currentTime;
-
-    $scope.pause = function() {
-      $scope.show = true;
+    VideoFactory.pauseListener(function() {
+      $scope.showPause = true;
       popcorn.pause();
-      currentTime = popcorn.currentTime();
+      return VideoFactory.currentTime = popcorn.currentTime();
+    });
 
-    }
-    $scope.submitQ = function() {
-      $scope.input = '';
-      popcorn.play();
-      console.log(currentTime);
-    }
-    popcorn.play();
+    wrapper.addEventListener('pause', function(e) {
+      VideoFactory.pause();
+    });
+
+    wrapper.addEventListener('play', function(e) {
+      VideoFactory.play();
+    });
+
+    VideoFactory.play();
 
   })
+  .directive('classvid', function() {
+    return {
+      template: '<div id="vidbox"> \
+        <div class="pause" ng-show="showPause">PAUSE</div> \
+        <div id="video"></div> \
+      </div>',
+      restrict: 'E'
+    }
+  })
+  .directive('teacheranswer', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'views/teacher-answer.html'
+    }
+  });

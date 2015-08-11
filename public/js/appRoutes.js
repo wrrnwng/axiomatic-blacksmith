@@ -46,17 +46,11 @@ angular.module('appRoutes', [])
       templateUrl: 'views/teacher-answer.html'
     }
   })
-  // 
-  .directive('classvid', function() {
+
+
+  .directive('timeline', function() {
     return {
       restrict: 'E',
-      templateUrl: 'views/classvid.html'
+      templateUrl: 'views/timeline.html'
     }
   })
-
-.directive('timeline', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'views/timeline.html'
-  }
-})
