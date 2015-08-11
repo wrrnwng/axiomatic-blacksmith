@@ -22,6 +22,7 @@ angular.module('StudentClassroomCtrl', [])
         title: $scope.question,
         body: $scope.question
       });
+      $scope.question = '';
     };
 
     $scope.getQandA();
