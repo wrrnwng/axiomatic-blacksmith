@@ -41,9 +41,4 @@ angular.module('appRoutes', [])
     }
   })
 
-  .directive('timeline', function() {
-    return {
-      restrict: 'E',
-      templateUrl: 'views/timeline.html'
-    }
-  })
+
