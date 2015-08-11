@@ -1,1 +1,1 @@
-angular.module('axiomatic', ['ui.router', 'appRoutes', 'MainCtrl', 'StudentClassroomCtrl', 'axiomatic.services']);
+angular.module('axiomatic', ['ui.router', 'appRoutes', 'MainCtrl', 'StudentClassroomCtrl', 'TeacherClassroomCtrl', 'VideoCtrl', 'axiomatic.services']);

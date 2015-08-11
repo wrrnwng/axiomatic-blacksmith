@@ -1,7 +1,6 @@
-angular.module('StudentClassroomCtrl', [])
-  .controller('StudentClassroomController', function($scope, qandaFactory, questionFormFactory) {
+angular.module('TeacherClassroomCtrl', [])
+  .controller('TeacherClassroomController', function($scope, qandaFactory) {
     $scope.data = {};
-    $scope.question = '';
 
     $scope.tagline = 'Welcome to the classroom!';
     $scope.getQandA = function() {
@@ -16,18 +15,14 @@ angular.module('StudentClassroomCtrl', [])
           });
         });
     };
-
-    $scope.askQuestion = function () {
-      questionFormFactory.submitQuestion({
-        title: $scope.question,
-        body: $scope.question
-      });
-      $scope.question = '';
-    };
-
     $scope.getQandA();
     return $scope;
+  })
 
-
-  });
-
+  .controller('TeacherAnswerController', function($scope, $http){
+    // need a current question service;
+    $scope.answer = {};
+    $scope.send = function(){
+      $http.post('/answer',$scope.answer).then(function(){console.log('Success!')});
+    }
+  })

@@ -33,3 +33,12 @@ body {
   width:640px;
   height:360px;
 }
+
+.teacher-answer{
+  margin:4px;
+}
+
+
+.teacher-answer legend {
+  padding:4px;
+}
