@@ -40,13 +40,6 @@ angular.module('appRoutes', [])
       templateUrl: 'views/queue.html'
     }
   })
-  .directive('teacheranswer', function() {
-    return {
-      restrict: 'E',
-      templateUrl: 'views/teacher-answer.html'
-    }
-  })
-
 
   .directive('timeline', function() {
     return {
