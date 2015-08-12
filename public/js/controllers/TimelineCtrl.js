@@ -1,16 +1,28 @@
 angular.module('TimelineCtrl', [])
 
 .controller('TimelineController', function($scope, VideoFactory, qandaFactory) {
+  var videoWidth = 640;
+  var barHeight = 20;
+  var progress = d3.select("#timeline").append("svg:svg")
+    .attr('id', 'play-svg')
+    .attr('width', videoWidth)
+    .attr('height', barHeight);
+  progress.append("rect")
+    .attr("id","progress-bar")
+    .attr("width", videoWidth)
+    .attr("height", barHeight)
+    .attr("x",0)
+    .attr("y",0);
   var timelineData = [{times: []}];
   var svg;
   var chart;
        qandaFactory.getAnswers()
         .then(function(questions) {
           questions.forEach(function(question){
-            timelineData[0].times.push({"starting_time": question.askQTime*1000, "ending_time": question.askQTime*1000+5000})
+            timelineData[0].times.push({"starting_time": question.askQTime*1000, "display": "circle"})
           })
 
-           svg = d3.select("#timeline5").append("svg").attr("width", '660')
+           svg = d3.select("#timeline").append("svg").attr("width", '640')
            .datum(timelineData).call(chart);
           });
 
@@ -34,7 +46,7 @@ angular.module('TimelineCtrl', [])
         tickTime: d3.time.seconds,
         tickInterval: 30,
         tickSize: 10})
-      .margin({left:0, right:15, top:15, bottom:0})
+      .margin({left:0, right:0, top:15, bottom:0})
       ;
    
   }  

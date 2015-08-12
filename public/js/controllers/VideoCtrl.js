@@ -62,9 +62,9 @@ angular.module('VideoCtrl', [])
     wrapper.src = 'https://www.youtube.com/watch?v=sh4O6DRs26M';
     var popcorn = Popcorn(wrapper);
     $scope.showPause = false;
-    $scope.play = VideoFactory.play,
-      $scope.pause = VideoFactory.pause,
-      $scope.isPlaying = VideoFactory.isPlaying;
+    $scope.play = VideoFactory.play;
+    $scope.pause = VideoFactory.pause;
+    $scope.isPlaying = VideoFactory.isPlaying;
 
     popcorn.on('durationchange', function() {
       VideoFactory.duration = popcorn.duration();
