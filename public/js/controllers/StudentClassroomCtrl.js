@@ -1,5 +1,5 @@
 angular.module('StudentClassroomCtrl', [])
-  .controller('StudentClassroomController', function($scope, qandaFactory, questionFormFactory) {
+  .controller('StudentClassroomController', function($scope, qandaFactory, questionFormFactory, VideoFactory) {
     $scope.data = {};
     $scope.question = '';
 
@@ -23,7 +23,10 @@ angular.module('StudentClassroomCtrl', [])
         body: $scope.question
       });
       $scope.question = '';
+      VideoFactory.play();
     };
+
+    $scope.pause = VideoFactory.pause
 
     $scope.getQandA();
     return $scope;
