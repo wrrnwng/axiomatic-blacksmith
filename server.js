@@ -11,6 +11,13 @@ var io             = require('socket.io')(server);
 	
 // config files
 var db = require('./config/db');
+// mongoose.connect(db.url);
+
+var passport = require('passport');
+var expressSession = require('express-session');
+app.use(expressSession({secret: 'mySecretKey'}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 var port = process.env.PORT || 8080; // set our port
 // mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)

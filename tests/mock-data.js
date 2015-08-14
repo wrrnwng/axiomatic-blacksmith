@@ -13,25 +13,33 @@ Question.find().remove().exec();
 
 var adnan = new User({
   name: 'Adnan',
-  role: 'teacher'
+  role: 'teacher',
+  username: 'Adnan',
+  password: 'Adnana'
 });
 adnan.save();
 
 var daniel = new User({
   name: 'Daniel',
-  role: 'student'
+  role: 'student',
+  username: 'Daniel',
+  password: 'Daniel'
 });
 daniel.save();
 
 var mila = new User({
   name: 'Mila',
-  role: 'student'
+  role: 'student',
+  username: 'Mila',
+  password: 'Mila'
 });
 mila.save();
 
 var warren = new User({
   name: 'Warren',
-  role: 'student'
+  role: 'student',
+  username: 'Warren',
+  password: 'Warren'
 });
 warren.save();
 
