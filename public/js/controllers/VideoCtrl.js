@@ -50,7 +50,7 @@ angular.module('VideoCtrl', [])
         if(!currentTimeGetter) throw 'No currentTime getter set!';
         currentTime = currentTimeGetter();
         return currentTime;
-      }
+      },
 
       isPlaying: isPlaying,
 
