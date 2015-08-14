@@ -31,6 +31,7 @@ module.exports = function(app, io) {
   app.get('/questions', function(req, res) {
     var questions = Question.find({})
       .populate('student')
+      .populate('answeredBy')
       .exec(function(err, data){
         if(err) throw err;
         res.send(data);
