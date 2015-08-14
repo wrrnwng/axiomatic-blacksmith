@@ -48,6 +48,24 @@ angular.module('TimelineCtrl', [])
     scope: { progress: '='}
   };
 })
+
+.directive('questionPopover', function() {
+  function link(scope, el, attr) {
+    el = el[0];
+    var width = 640;
+    var height = 16;
+    var svg = d3.select(el).append('svg')
+      .attr({
+        width: width,
+        height: height
+      });
+  }
+  return {
+    link: link,
+    restrict: 'E'
+  }
+})
+
 .directive('currentQuestion', function() {
   return {
     template: ''
