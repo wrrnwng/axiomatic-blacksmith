@@ -55,6 +55,7 @@ angular.module('VideoCtrl', [])
       isPlaying: isPlaying,
 
       duration: duration
+
     }
   })
   .controller('VideoController', function($scope, VideoFactory) {
@@ -91,6 +92,10 @@ angular.module('VideoCtrl', [])
     wrapper.addEventListener('play', function(e) {
       VideoFactory.play();
     });
+
+    VideoFactory.currentTime = function() {
+      return popcorn.currentTime();
+    };
 
     VideoFactory.play();
 

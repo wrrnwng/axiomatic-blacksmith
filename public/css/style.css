@@ -78,3 +78,42 @@ body {
 #play-svg {
   background-color: #d9edf7;
 }
+
+#progress-bar {
+  fill:#666;
+}
+
+#play-control {
+  width:37px;
+  height:36px;
+  background:url("http://www.bloomberg.com/image/idAx.BJxL1Lc.png") 37px 0px;
+  cursor: pointer;
+  position: absolute;
+}
+
+#play-control.playing {
+  background:url("http://www.bloomberg.com/image/idAx.BJxL1Lc.png") 37px 0px;
+}
+#play-control.play:hover {
+  background:url("http://www.bloomberg.com/image/idAx.BJxL1Lc.png") 0px 0px;
+}
+#play-control.pausing {
+  background:url("http://www.bloomberg.com/image/idAx.BJxL1Lc.png") 37px -36px;
+}
+#play-control.pausing:hover {
+  background:url("http://www.bloomberg.com/image/idAx.BJxL1Lc.png") 0px -36px;
+}
+#play-control.replay {
+  background:url("http://www.bloomberg.com/image/idAx.BJxL1Lc.png") 37px -72px;
+}
+#play-control.replay:hover {
+  background:url("http://www.bloomberg.com/image/idAx.BJxL1Lc.png") 0px -72px;
+}
+
+#scrubber {
+  width:640px;
+  height:20px;
+  position:absolute;
+  top:0;
+  left:37px;
+}
