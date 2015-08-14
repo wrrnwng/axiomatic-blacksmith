@@ -2,6 +2,7 @@ angular.module('VideoCtrl', [])
   .factory('VideoFactory', function VideoFactory() {
     var duration,
       currentTime,
+      currentTimeGetter,
       isPlaying = true,
       playCallbacks = [],
       pauseCallbacks = [],
@@ -41,6 +42,16 @@ angular.module('VideoCtrl', [])
         });
       },
 
+      setCurrentTimeGetter: function(getter){
+        currentTimeGetter = getter;
+      },
+
+      currentTime: function(){
+        if(!currentTimeGetter) throw 'No currentTime getter set!';
+        currentTime = currentTimeGetter();
+        return currentTime;
+      }
+
       isPlaying: isPlaying,
 
       duration: duration
@@ -70,6 +81,8 @@ angular.module('VideoCtrl', [])
       popcorn.pause();
       return VideoFactory.currentTime = popcorn.currentTime();
     });
+
+    VideoFactory.setCurrentTimeGetter(popcorn.currentTime);
 
     wrapper.addEventListener('pause', function(e) {
       VideoFactory.pause();
