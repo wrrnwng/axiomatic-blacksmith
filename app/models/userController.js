@@ -32,6 +32,7 @@ module.exports = {
   signup: function (req, res, next) {
     var username  = req.body.username,
         password  = req.body.password,
+        name = req.body.name,
         create,
         newUser;
 
@@ -47,7 +48,8 @@ module.exports = {
           create = Q.nbind(User.create, User);
           newUser = {
             username: username,
-            password: password
+            password: password,
+            name: name
           };
           return create(newUser);
         }

@@ -1,6 +1,6 @@
 angular.module('appRoutes', [])
   .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $httpProvider) {
-
+    // $urlRouterProvider.otherwise('/');
     $stateProvider
     // home page
       .state('home', {
@@ -31,12 +31,7 @@ angular.module('appRoutes', [])
         templateUrl: 'views/signup.html',
         controller: 'AuthCtrl'
       })
-      // .state('logout', {
-      //   url: '/logout',
-      //   controller: function($scope, $route) {
-      //     $route.reload()
-      //   }
-      // })
+
 
       $httpProvider.interceptors.push('AttachTokens');
     }])
@@ -92,4 +87,13 @@ angular.module('appRoutes', [])
       templateUrl: 'views/queue.html'
     }
   })
+  .directive('profile', function() {
+  return {
+    scope: {
+      questions: '='
+    },
+    restrict: 'E',
+    templateUrl: 'views/profile.html'
+  }
+})
   
