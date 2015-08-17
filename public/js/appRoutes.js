@@ -17,7 +17,7 @@ angular.module('appRoutes', [])
       .state('teacher-classroom', {
         url: '/classroom/teacher',
         templateUrl: 'views/teacher-classroom.html',
-        controller: 'StudentClassroomController',
+        controller: 'TeacherClassroomController',
         authenticate: true,
       })
       .state('signin', {

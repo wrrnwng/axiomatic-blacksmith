@@ -111,9 +111,3 @@ angular.module('VideoCtrl', [])
       restrict: 'E'
     }
   })
-  .directive('teacheranswer', function() {
-    return {
-      restrict: 'E',
-      templateUrl: 'views/teacher-answer.html'
-    }
-  });
