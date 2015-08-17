@@ -38,6 +38,7 @@ angular.module('TeacherClassroomCtrl', [])
       $scope.question.answer = $scope.answer.text;
       $scope.question.answeredBy = $window.localStorage.getItem('com.axiomatic.id');
       $http.post('/answer',$scope.question).then(function(){console.log('Success!')});
+      VideoFactory.play();
     };
 
   })
