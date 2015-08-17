@@ -46,15 +46,16 @@ angular.module('VideoCtrl', [])
         currentTimeGetter = getter;
       },
 
-      currentTime: function(){
-        if(!currentTimeGetter) throw 'No currentTime getter set!';
-        currentTime = currentTimeGetter();
-        return currentTime;
-      },
+      // currentTime: function(){
+      //   if(!currentTimeGetter) throw 'No currentTime getter set!';
+      //   currentTime = currentTimeGetter();
+      //   return currentTime;
+      // },
 
       isPlaying: isPlaying,
 
       duration: duration
+
     }
   })
   .controller('VideoController', function($scope, VideoFactory) {
@@ -62,9 +63,9 @@ angular.module('VideoCtrl', [])
     wrapper.src = 'https://www.youtube.com/watch?v=sh4O6DRs26M';
     var popcorn = Popcorn(wrapper);
     $scope.showPause = false;
-    $scope.play = VideoFactory.play,
-      $scope.pause = VideoFactory.pause,
-      $scope.isPlaying = VideoFactory.isPlaying;
+    $scope.play = VideoFactory.play;
+    $scope.pause = VideoFactory.pause;
+    $scope.isPlaying = VideoFactory.isPlaying;
 
     popcorn.on('durationchange', function() {
       VideoFactory.duration = popcorn.duration();
@@ -79,7 +80,7 @@ angular.module('VideoCtrl', [])
     VideoFactory.pauseListener(function() {
       $scope.showPause = true;
       popcorn.pause();
-      return VideoFactory.currentTime = popcorn.currentTime();
+      // return VideoFactory.currentTime = popcorn.currentTime();
     });
 
     VideoFactory.setCurrentTimeGetter(popcorn.currentTime);
@@ -91,6 +92,10 @@ angular.module('VideoCtrl', [])
     wrapper.addEventListener('play', function(e) {
       VideoFactory.play();
     });
+
+    VideoFactory.currentTime = function() {
+      return popcorn.currentTime();
+    };
 
     VideoFactory.play();
 
