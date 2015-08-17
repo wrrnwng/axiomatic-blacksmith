@@ -1,13 +1,13 @@
 angular.module('TeacherClassroomCtrl', [])
   .controller('TeacherClassroomController', function($scope, qandaFactory, VideoFactory, socketFactory) {
     $scope.data = {};
-
     $scope.tagline = 'Welcome to the classroom!';
 
     $scope.getQandA = function() {
       qandaFactory.getAnswers()
         .then(function(questions) {
           $scope.data.questions = questions;
+          console.log($scope.data.questions);
           $scope.data.answeredQuestions = questions.filter(function (question) {
             return !!question.answer;
           });
@@ -37,7 +37,9 @@ angular.module('TeacherClassroomCtrl', [])
     $scope.pause = VideoFactory.pause;
 
     return $scope;
+
   })
+
 
   .controller('TeacherAnswerController', function($scope, $http, $window, VideoFactory, socketFactory){
     // need a current question service;

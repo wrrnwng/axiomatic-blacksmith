@@ -98,6 +98,15 @@ angular.module('appRoutes', [])
       }
     }
   })
+    .directive('teachqueue', function() {
+    return {
+      scope: {
+        questions: '='
+      },
+      restrict: 'E',
+      templateUrl: 'views/teachqueue.html'
+    }
+  })
   .directive('profile', function() {
   return {
     scope: {

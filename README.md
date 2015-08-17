@@ -24,11 +24,13 @@
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- Node 0.12.7
+- MongoDb 3.0.5
+- Angular latest
+- Express 4.5.1
+- Socket.io: 1.3.6
+- Popcorn.js 1.5.11
+- D3.js 3.5.6
 
 ## Development
 

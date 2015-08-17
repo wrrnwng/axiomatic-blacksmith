@@ -420,3 +420,20 @@ label:hover:before {
   font-weight: bold;
 }
 
+.btn-primary {
+  color: #fff;
+  background-color: #222;
+  border-color: #222;
+ }
+ 
+.answerBtn {
+  float:right;
+ } 
+
+ .answer-row {
+  border-bottom: solid 1px #d3d3d3;
+}
+
+.answerpad {
+  padding-left: 25px;
+}
