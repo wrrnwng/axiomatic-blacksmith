@@ -1,4 +1,9 @@
 angular.module('axiomatic.services', [])
+  .filter('secondsToDateTime', [function() {
+      return function(seconds) {
+          return new Date(1970, 0, 1).setSeconds(seconds);
+      };
+  }])
   .factory('qandaFactory', function($http) {
     var getAnswers = function() {
       return $http({

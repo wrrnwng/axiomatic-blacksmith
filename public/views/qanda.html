@@ -13,7 +13,7 @@
                    <img class="media-object img-circle " src="img/user.png" style = "width:30px" />
                 </a>
                   <div class="media-body">
-                        {{question.body}} @ {{question.askQTime}}
+                        {{question.body}} @ <span class="timestamp">{{question.askQTime | secondsToDateTime | date:'mm:ss'}}</span>
                       <br />
                       <small class="text-muted">{{question.student.name}} | 23rd June at 5:00pm</small>
                      

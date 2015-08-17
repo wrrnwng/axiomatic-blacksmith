@@ -42,6 +42,19 @@ form{
 form legend {
   padding:4px;
 }
+
+/*Timestamps*/
+
+.timestamp {
+  color: #3B3DFF;
+}
+.timestamp:hover {
+  color: #5D2573;
+}
+.timestamp:active {
+  color: red;
+}
+
 /*Timeline css*/
 
 .axis path,
