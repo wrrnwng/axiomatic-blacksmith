@@ -75,8 +75,9 @@ angular.module('axiomatic.services', [])
 
   var signout = function () {
     $window.localStorage.removeItem('com.axiomatic');
-    $window.localStorage.removeItem('com.axiomatic.name');
     $window.localStorage.removeItem('com.axiomatic.id');
+    $window.localStorage.removeItem('com.axiomatic.name');
+
 
 
     $location.path('/signin');
