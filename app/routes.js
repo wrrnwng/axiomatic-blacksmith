@@ -62,7 +62,7 @@ module.exports = function(app, io) {
   // ie: '5555ad2...',   NOT   ObjectID('5555ad2....') )
   app.post('/answer', function(req, res){
     // find the corresponding question by primary key
-    Question.findOne( { _id : req.body.questionid }, function(err, question){
+    Question.findOne( { _id : req.body._id }, function(err, question){
       if(err) throw err;
       question.answeredBy = req.body.answeredBy;
       question.answer = req.body.answer;
