@@ -11,6 +11,7 @@ angular.module('TimelineCtrl', [])
         $scope.duration = VideoFactory.duration;
       }
     }
+    console.log($scope.progress);
   }, 1000);
 })
 .directive('timeline', function() {

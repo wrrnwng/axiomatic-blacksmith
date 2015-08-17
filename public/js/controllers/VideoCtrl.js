@@ -46,11 +46,11 @@ angular.module('VideoCtrl', [])
         currentTimeGetter = getter;
       },
 
-      currentTime: function(){
-        if(!currentTimeGetter) throw 'No currentTime getter set!';
-        currentTime = currentTimeGetter();
-        return currentTime;
-      },
+      // currentTime: function(){
+      //   if(!currentTimeGetter) throw 'No currentTime getter set!';
+      //   currentTime = currentTimeGetter();
+      //   return currentTime;
+      // },
 
       isPlaying: isPlaying,
 
@@ -80,7 +80,7 @@ angular.module('VideoCtrl', [])
     VideoFactory.pauseListener(function() {
       $scope.showPause = true;
       popcorn.pause();
-      return VideoFactory.currentTime = popcorn.currentTime();
+      // return VideoFactory.currentTime = popcorn.currentTime();
     });
 
     VideoFactory.setCurrentTimeGetter(popcorn.currentTime);
