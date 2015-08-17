@@ -110,4 +110,6 @@ angular.module('VideoCtrl', [])
       templateUrl: 'views/classvid.html',
       restrict: 'E'
     }
-  })
+
+  });
+
