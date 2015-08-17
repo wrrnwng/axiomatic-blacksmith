@@ -1,5 +1,5 @@
 angular.module('StudentClassroomCtrl', [])
-  .controller('StudentClassroomController', function($scope, qandaFactory, questionFormFactory, VideoFactory, socketFactory) {
+  .controller('StudentClassroomController', function($scope, $window, $rootScope, qandaFactory, questionFormFactory, VideoFactory, socketFactory) {
     $scope.data = {};
     $scope.question = '';
 
@@ -23,10 +23,15 @@ angular.module('StudentClassroomCtrl', [])
     $scope.askQuestion = function() {
       var data = {
         title: $scope.question,
-        body: $scope.question
+        body: $scope.question,
+        student: $window.localStorage.getItem('com.axiomatic.id')
       };
-      socketFactory.socket.emit('new-question', data)
       questionFormFactory.submitQuestion(data);
+      socketFactory.socket.emit('new-question', {
+        title: $scope.question,
+        body: $scope.question,
+        student: {name: $window.localStorage.getItem('com.axiomatic.name')}
+      })
       $scope.question = '';
       VideoFactory.play();
     };

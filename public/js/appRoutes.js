@@ -64,7 +64,8 @@ angular.module('appRoutes', [])
        if (toState.authenticate && !Auth.isAuth()) {
            e.preventDefault();
            $state.go('signin');
-       }  
+       }
+        
     });
   })
 
