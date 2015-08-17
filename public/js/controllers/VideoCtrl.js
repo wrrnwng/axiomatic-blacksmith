@@ -93,8 +93,13 @@ angular.module('VideoCtrl', [])
       VideoFactory.play();
     });
 
+    // TO-DO: refactor into setters/getters on VideoFactory
     VideoFactory.currentTime = function() {
       return popcorn.currentTime();
+    };
+
+    VideoFactory.goTo = function (seconds) {
+      popcorn.play(seconds);
     };
 
     VideoFactory.play();
