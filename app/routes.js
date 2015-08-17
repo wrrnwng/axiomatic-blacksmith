@@ -3,6 +3,7 @@ module.exports = function(app, io) {
   var Question = require('./models/Question');
   var User = require('./models/User');
   var url = require('url');
+  var userController = require('./models/userController.js');
 
 
   // Express routing service for get and post requests
@@ -99,5 +100,14 @@ module.exports = function(app, io) {
       io.emit('new-question', asked);
     });
   });
+
+ // userRoutes
+
+   // app === userRouter injected from middlware.js
+
+  app.post('/signin', userController.signin);
+  app.post('/signup', userController.signup);
+  app.get('/signedin', userController.checkAuth);
+
 }
 
