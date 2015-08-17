@@ -1,8 +1,9 @@
 angular.module('TeacherClassroomCtrl', [])
-  .controller('TeacherClassroomController', function($scope, qandaFactory) {
+  .controller('TeacherClassroomController', function($scope, qandaFactory, VideoFactory) {
     $scope.data = {};
 
     $scope.tagline = 'Welcome to the classroom!';
+
     $scope.getQandA = function() {
       qandaFactory.getAnswers()
         .then(function(questions) {
@@ -16,15 +17,29 @@ angular.module('TeacherClassroomCtrl', [])
         });
     };
     $scope.getQandA();
+
+    $scope.play = VideoFactory.play;
+
+    $scope.pause = VideoFactory.pause;
+
     return $scope;
   })
 
-  .controller('TeacherAnswerController', function($scope, $http){
+  .controller('TeacherAnswerController', function($scope, $http, $window, VideoFactory){
     // need a current question service;
     $scope.answer = {};
+    $http.get('/questions').then(function(data){
+      $scope.question = data.data[data.data.length-1];
+      console.log("$scope.question loaded: ")
+      console.log($scope.question);
+    });
+
     $scope.send = function(){
-      $http.post('/answer',$scope.answer).then(function(){console.log('Success!')});
-    }
+      $scope.question.answer = $scope.answer.text;
+      $scope.question.answeredBy = $window.localStorage.getItem('com.axiomatic.id');
+      $http.post('/answer',$scope.question).then(function(){console.log('Success!')});
+    };
+
   })
 
   .directive('teacheranswer', function() {
