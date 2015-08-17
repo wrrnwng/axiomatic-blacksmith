@@ -65,7 +65,7 @@ angular.module('axiomatic.services', [])
       data: user
     })
     .then(function (resp) {
-      return {token: resp.data.token, name: resp.data.name};
+      return {token: resp.data.token, name: resp.data.name, id: resp.data.id};
     });
   };
 
@@ -76,6 +76,8 @@ angular.module('axiomatic.services', [])
   var signout = function () {
     $window.localStorage.removeItem('com.axiomatic');
     $window.localStorage.removeItem('com.axiomatic.name');
+    $window.localStorage.removeItem('com.axiomatic.id');
+
 
     $location.path('/signin');
   };
