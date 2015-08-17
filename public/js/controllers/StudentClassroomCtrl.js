@@ -1,5 +1,5 @@
 angular.module('StudentClassroomCtrl', [])
-  .controller('StudentClassroomController', function($scope, $window, $rootScope, qandaFactory, questionFormFactory, VideoFactory, socketFactory) {
+  .controller('StudentClassroomController', function($scope, $window, qandaFactory, questionFormFactory, VideoFactory, socketFactory) {
     $scope.data = {};
     $scope.question = '';
 
@@ -16,6 +16,17 @@ angular.module('StudentClassroomCtrl', [])
           });
           socketFactory.socket.on('new-question', function (question) {
             $scope.data.questionQueue.push(question);
+          });
+          socketFactory.socket.on('answered-question', function (question) {
+            $scope.data.answeredQuestions.push(question);
+            var queue = $scope.data.questionQueue
+            for (var i = 0; i < queue.length; i++) {
+              console.log(queue[i]._id, question._id);
+              if (queue[i]._id === question._id) {
+                queue.splice(i, 1);
+                break;
+              }
+            }
           });
         });
     };

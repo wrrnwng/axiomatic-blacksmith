@@ -100,6 +100,10 @@ module.exports = function(app, io) {
     socket.on('new-question', function (asked) {
       io.emit('new-question', asked);
     });
+    
+    socket.on('answered-question', function (answered) {
+      io.emit('answered-question', answered);
+    });
   });
 
  // userRoutes
