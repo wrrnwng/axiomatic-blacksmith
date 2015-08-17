@@ -45,6 +45,7 @@ module.exports = function(app, io) {
       title: req.body.title,
       body: req.body.body,
       student: req.body.student,
+      askQTime: req.body.askQTime,
       answeredBy: null,
       answer: null
     });
