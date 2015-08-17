@@ -69,23 +69,33 @@ angular.module('appRoutes', [])
     });
   })
 
-  .directive('qanda', function() {
+  .directive('qanda', function (VideoFactory) {
     return {
       scope: {
         questions: '=',
         askQuestion: '&'
       },
       restrict: 'E',
-      templateUrl: 'views/qanda.html'
+      templateUrl: 'views/qanda.html',
+      link: function ($scope) {
+        $scope.goTo = function (seconds) {
+          VideoFactory.goTo(seconds);
+        };
+      }
     }
   })
-  .directive('queue', function() {
+  .directive('queue', function (VideoFactory) {
     return {
       scope: {
         questions: '='
       },
       restrict: 'E',
-      templateUrl: 'views/queue.html'
+      templateUrl: 'views/queue.html',
+      link: function ($scope) {
+        $scope.goTo = function (seconds) {
+          VideoFactory.goTo(seconds);
+        };
+      }
     }
   })
   .directive('profile', function() {
