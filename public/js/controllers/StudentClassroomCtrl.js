@@ -24,13 +24,15 @@ angular.module('StudentClassroomCtrl', [])
       var data = {
         title: $scope.question,
         body: $scope.question,
-        student: $window.localStorage.getItem('com.axiomatic.id')
+        student: $window.localStorage.getItem('com.axiomatic.id'),
+        askQTime: VideoFactory.currentTime()
       };
       questionFormFactory.submitQuestion(data);
       socketFactory.socket.emit('new-question', {
         title: $scope.question,
         body: $scope.question,
-        student: {name: $window.localStorage.getItem('com.axiomatic.name')}
+        student: {name: $window.localStorage.getItem('com.axiomatic.name')},
+        askQTime: VideoFactory.currentTime()
       })
       $scope.question = '';
       VideoFactory.play();
