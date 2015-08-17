@@ -6,8 +6,13 @@
         <classvid ng-controller="VideoController"></classvid>
         <div class="panel-footer">
           <form name="ask-question" ng-submit="askQuestion()">
-            <input type="text" ng-model="question" ng-change='pause()' class="form-control" placeholder="Ask a question">
-            <button type="submit" class="btn btn-info" type="submit">Ask</button>
+            <legend>Ask Question</legend>
+            <div class="input-group">
+              <input type="text" ng-model="question" class="form-control" ng-change='pause()' placeholder="Ask a question...">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-info">Submit Question</button>
+              </span>
+            </div>
           </form>
         </div>
       </div>

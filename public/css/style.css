@@ -34,12 +34,12 @@ body {
   height:360px;
 }
 
-.teacher-answer{
+form{
   margin:4px;
 }
 
 
-.teacher-answer legend {
+form legend {
   padding:4px;
 }
 /*Timeline css*/
