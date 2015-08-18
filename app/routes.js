@@ -51,9 +51,12 @@ module.exports = function(app, io) {
     });
 
     // save the newly created model to Mongoose
-    question.save(function(err, data){
+    question.save(function (err, data) {
       if (err) throw err;
-      res.send(201);
+      question.populate('student', function (err, data) {
+        if (err) throw err;
+        res.send(201, data);
+      });
     });
   });
 
@@ -66,9 +69,14 @@ module.exports = function(app, io) {
       if(err) throw err;
       question.answeredBy = req.body.answeredBy;
       question.answer = req.body.answer;
-      question.save();
+      question.save(function (err, data) {
+        if (err) throw err;
+        question.populate('answeredBy', function (err, populatedData) {
+          if (err) throw err;
+          res.send(201, populatedData);
+        });
+      });
       // TODO: come back and redirect
-      res.send(201,'Success!\n');
     });
   });
 

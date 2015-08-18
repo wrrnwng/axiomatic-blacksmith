@@ -21,7 +21,6 @@ angular.module('StudentClassroomCtrl', [])
             $scope.data.answeredQuestions.push(question);
             var queue = $scope.data.questionQueue
             for (var i = 0; i < queue.length; i++) {
-              console.log(queue[i]._id, question._id);
               if (queue[i]._id === question._id) {
                 queue.splice(i, 1);
                 break;
@@ -38,12 +37,8 @@ angular.module('StudentClassroomCtrl', [])
         student: $window.localStorage.getItem('com.axiomatic.id'),
         askQTime: VideoFactory.currentTime()
       };
-      questionFormFactory.submitQuestion(data);
-      socketFactory.socket.emit('new-question', {
-        title: $scope.question,
-        body: $scope.question,
-        student: {name: $window.localStorage.getItem('com.axiomatic.name')},
-        askQTime: VideoFactory.currentTime()
+      questionFormFactory.submitQuestion(data).then(function (newQuestion) {
+        socketFactory.socket.emit('new-question', newQuestion);
       })
       $scope.question = '';
       VideoFactory.play();
