@@ -17,16 +17,17 @@ body {
 
 .pause{
       margin: auto auto;
-      font-size:20px;
+      font-size:48px;
       text-align: center;
-      background-color:black;
-      color:white;
-      position: absolute;
-      top: 160px;
+      text-decoration: bold;
+      position:absolute;
+      top:20px;
+      left:15px;
+      background-color:rgba(255,255,255,0.6);
+      color:black;
       padding-top: 20px;
-      left: 180px;
-      height: 40px;
-      width: 120px;
+      height: 360px;
+      width: 640px;
     }
 
 #video{
