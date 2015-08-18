@@ -33,7 +33,6 @@ angular.module('TeacherClassroomCtrl', [])
             $scope.data.answeredQuestions.push(question);
             var queue = $scope.data.questionQueue
             for (var i = 0; i < queue.length; i++) {
-              console.log(queue[i]._id, question._id);
               if (queue[i]._id === question._id) {
                 queue.splice(i, 1);
                 break;
@@ -70,18 +69,11 @@ angular.module('TeacherClassroomCtrl', [])
     $scope.send = function(){
       $scope.question.answer = $scope.answer.text;
       $scope.question.answeredBy = $window.localStorage.getItem('com.axiomatic.id');
-      $http.post('/answer',$scope.question);
-      VideoFactory.play();
-      socketFactory.socket.emit('answered-question', {
-        _id: $scope.question._id,
-        title: $scope.question.title,
-        body: $scope.question.body,
-        student: $scope.question.student,
-        askQTime: $scope.question.askQTime,
-        answer: $scope.question.answer,
-        answeredBy: {name: $window.localStorage.getItem('com.axiomatic.name')}
+      $http.post('/answer',$scope.question).then(function (answeredQuestion) {
+        socketFactory.socket.emit('answered-question', answeredQuestion.data);
       });
       CurrentQuestionFactory.hide();
+      VideoFactory.play();
     };
 
   })
