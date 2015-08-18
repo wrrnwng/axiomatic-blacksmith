@@ -1,6 +1,10 @@
 <div class='container teacher-answer' ng-show='show'>
   <form>
     <legend>Question Response</legend>
+    <div class="alert alert-info">
+    <strong>{{question.student.name}}</strong>
+    {{question.title}}
+    </div>
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Your answer here..." ng-model='answer.text' ng-change="pause()">
       <span class="input-group-btn">
