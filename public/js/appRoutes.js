@@ -84,7 +84,7 @@ angular.module('appRoutes', [])
       }
     }
   })
-  .directive('queue', function (VideoFactory) {
+  .directive('queue', function (VideoFactory, CurrentQuestionFactory) {
     return {
       scope: {
         questions: '='
@@ -95,16 +95,35 @@ angular.module('appRoutes', [])
         $scope.goTo = function (seconds) {
           VideoFactory.goTo(seconds);
         };
+        $scope.current = function(question){
+          CurrentQuestionFactory.currentQuestion(question);
+          CurrentQuestionFactory.show();
+          console.log('final current: ');
+          console.log(CurrentQuestionFactory.currentQuestion);
+          console.log(CurrentQuestionFactory.show);
+        }
       }
     }
   })
-    .directive('teachqueue', function() {
+  .directive('teachqueue', function (VideoFactory, CurrentQuestionFactory) {
     return {
       scope: {
         questions: '='
       },
       restrict: 'E',
-      templateUrl: 'views/teachqueue.html'
+      templateUrl: 'views/teachqueue.html',
+      link: function ($scope) {
+        $scope.goTo = function (seconds) {
+          VideoFactory.goTo(seconds);
+        };
+        $scope.current = function(question){
+          CurrentQuestionFactory.currentQuestion(question);
+          CurrentQuestionFactory.show();
+          console.log('final current: ');
+          console.log(CurrentQuestionFactory.currentQuestion);
+          console.log(CurrentQuestionFactory.show);
+        }
+      }
     }
   })
   .directive('profile', function() {
