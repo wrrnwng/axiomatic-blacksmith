@@ -15,7 +15,7 @@
                   <div class="media-body">
                         {{question.body}} @ <span class="timestamp" ng-click="goTo(question.askQTime)">{{question.askQTime | secondsToDateTime | date:'mm:ss'}}</span>
                       <br />
-                      <small class="text-muted">{{question.student.name}} | 23rd June at 5:00pm</small>
+                      <small class="text-muted">{{question.student.name}} | {{ question.created_at }}</small>
                      
                   </div>
               </div>
@@ -30,7 +30,7 @@
                 <div class="media-body">
                      {{question.answer}}
                     <br />
-                   <small class="text-muted">{{question.answeredBy.name}} | 23rd June at 5:00pm</small>
+                   <small class="text-muted">{{question.answeredBy.name}} | {{ question.created_at }}</small>
                
                 </div>
             </div>
