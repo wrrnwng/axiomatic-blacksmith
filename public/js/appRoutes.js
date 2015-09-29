@@ -1,5 +1,5 @@
 angular.module('appRoutes', [])
-  .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $httpProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
     // $urlRouterProvider.otherwise('/');
     $stateProvider
     // home page
@@ -34,6 +34,8 @@ angular.module('appRoutes', [])
 
 
       $httpProvider.interceptors.push('AttachTokens');
+
+      $locationProvider.html5Mode(true);
     }])
     .factory('AttachTokens', function ($window) {
     // this is an $httpInterceptor
